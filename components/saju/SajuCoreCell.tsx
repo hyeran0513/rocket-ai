@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 const baseClasses = "flex flex-col items-center justify-center text-center";

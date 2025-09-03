@@ -1,4 +1,4 @@
-import SajuCoreCell from "@/components/SajuCoreCell";
+import SajuCoreCell from "@/components/saju/SajuCoreCell";
 import SajuRow from "./SajuRow";
 import type { SajuRes } from "@/app/api/dto/saju";
 import { SAJU_HEADERS } from "@/constants/saju";

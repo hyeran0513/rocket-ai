@@ -1,4 +1,4 @@
-import SajuCoreCell from "@/components/SajuCoreCell";
+import SajuCoreCell from "@/components/saju/SajuCoreCell";
 import SajuTextPair from "./SajuTextPair";
 import SajuColumn from "./SajuColumn";
 import type {

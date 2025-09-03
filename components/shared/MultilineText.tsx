@@ -1,4 +1,4 @@
-import { splitMultilineText } from "@/utils/text";
+import { splitMultilineText } from "@/lib/text";
 
 interface MultilineTextProps {
   text: string; // 텍스트

@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 const baseClasses =
   "rounded-[12.55px] flex flex-col items-center justify-center aspect-square py-[4px] size-[55.45px]";

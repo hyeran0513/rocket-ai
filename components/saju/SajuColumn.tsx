@@ -1,6 +1,6 @@
-import SajuBox from "@/components/SajuBox";
+import SajuBox from "@/components/saju/SajuBox";
 import SajuTextPair from "./SajuTextPair";
-import { getColorSchemeByElement, getVariantByElement } from "@/utils/saju";
+import { getColorSchemeByElement, getVariantByElement } from "@/lib/saju/utils";
 import type {
   SajuColumn as SajuColumnType,
   SajuColumnTriple,

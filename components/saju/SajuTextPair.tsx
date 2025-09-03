@@ -1,4 +1,4 @@
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 export interface SajuTextPairProps {
   hanja?: string; // 한자
