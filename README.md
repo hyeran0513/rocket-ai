@@ -10,17 +10,6 @@ Rocket AI 코딩 테스트에 제출할 프로젝트 코드입니다.
 - **Package Manager**: Yarn 4.4.1
 - **Code Quality**: ESLint, Prettier
 
-### 미리보기
-
-| 전체 화면 | 노데이터 처리 | 스켈레톤 처리 |
-|:---:|:---:|:---:|
-| <img width="140" height="700" alt="전체 화면" src="https://github.com/user-attachments/assets/3afe94d8-80ce-453e-a209-f9e459e85dfe" /> | <img width="360" height="670" alt="노데이터 처리 화면" src="https://github.com/user-attachments/assets/ce997f52-2457-4ff4-b232-54f5d3a3c05e" /> | <img width="360" height="670" alt="스켈레톤 처리" src="https://github.com/user-attachments/assets/de821828-9923-494f-88f8-1874e4183d30" /> |
-
-### 배포
-**배포 URL**: https://rocket-ai-six.vercel.app/
-
-<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/43a5c86f-762c-4ff9-a377-14c256963ca5" />
-
 ### 폴더 구조
 
 ```
@@ -90,3 +79,14 @@ rocket-ai/
 ├── yarn.lock                   # Yarn 의존성 잠금 파일
 └── README.md                   # 프로젝트 문서
 ```
+
+### 배포
+**배포 URL**: https://rocket-ai-six.vercel.app/
+
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/43a5c86f-762c-4ff9-a377-14c256963ca5" />
+
+### 미리보기
+
+| 전체 화면 | 노데이터 처리 | 스켈레톤 처리 |
+|:---:|:---:|:---:|
+| <img width="140" height="700" alt="전체 화면" src="https://github.com/user-attachments/assets/3afe94d8-80ce-453e-a209-f9e459e85dfe" /> | <img width="360" height="670" alt="노데이터 처리 화면" src="https://github.com/user-attachments/assets/ce997f52-2457-4ff4-b232-54f5d3a3c05e" /> | <img width="360" height="670" alt="스켈레톤 처리" src="https://github.com/user-attachments/assets/de821828-9923-494f-88f8-1874e4183d30" /> |
