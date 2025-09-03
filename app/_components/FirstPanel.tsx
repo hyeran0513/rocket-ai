@@ -15,7 +15,7 @@ export default function FirstPanel({ data }: FirstPanelProps) {
       <div className="flex flex-col items-center justify-center gap-y-[12px] absolute top-[84px] left-1/2 -translate-x-1/2 z-20">
         {/* 첫 번째 패널 제목 */}
         <p className="chapter-text text-white">
-          {data.firstPanel.chapter.title}
+          {data.firstPanel.chapter?.title}
         </p>
 
         {/* 첫 번째 패널 제목 데코 */}
@@ -28,14 +28,14 @@ export default function FirstPanel({ data }: FirstPanelProps) {
 
         {/* 첫 번째 패널 부제목 */}
         <p className="chapter-text text-white">
-          {data.firstPanel.chapter.subtitle}
+          {data.firstPanel.chapter?.subtitle}
         </p>
       </div>
 
       <div className="relative aspect-[375/652]">
         {/* 첫 번째 패널 이미지 */}
         <Image
-          src="/images/comic_1panel.png"
+          src={data.firstPanel.image}
           alt="첫 번째 패널"
           fill
           className="object-cover"

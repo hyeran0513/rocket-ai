@@ -19,7 +19,7 @@ export default function Home() {
       <FirstPanel data={data} />
 
       {/* 두 번째 패널 */}
-      <SecondPanel />
+      <SecondPanel data={data} />
 
       {/* 세 번째 패널 */}
       <ThirdPanel data={data} />

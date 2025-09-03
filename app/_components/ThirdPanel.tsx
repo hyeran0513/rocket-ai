@@ -27,7 +27,7 @@ export default function ThirdPanel({ data }: ThirdPanelProps) {
       {/* 세 번째 패널 */}
       <div className="relative aspect-[375/306]">
         <Image
-          src="/images/comic_3panel.png"
+          src={data.thirdPanel.image}
           alt="세 번째 패널"
           fill
           className="object-cover"
