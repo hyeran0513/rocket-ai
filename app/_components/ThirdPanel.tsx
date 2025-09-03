@@ -2,9 +2,11 @@ import Image from "next/image";
 import MultilineText from "@/components/shared/MultilineText";
 import { DialogsRes } from "@/app/api/dto/dialogs";
 import ThirdPanelSkeleton from "./skeletons/ThirdPanelSkeleton";
+import NoData from "@/components/ui/NoData";
+import { ImageIcon } from "lucide-react";
 
 interface ThirdPanelProps {
-  data: DialogsRes;
+  data: DialogsRes | null | undefined;
   isLoading?: boolean;
 }
 
@@ -12,8 +14,20 @@ export default function ThirdPanel({
   data,
   isLoading = false,
 }: ThirdPanelProps) {
-  if (isLoading) {
-    return <ThirdPanelSkeleton />;
+  if (isLoading) return <ThirdPanelSkeleton />;
+
+  if (!data?.thirdPanel) {
+    return (
+      <div className="relative">
+        <div className="relative aspect-[375/306] bg-gray-100">
+          <NoData
+            message="데이터를 불러올 수 없습니다."
+            icon={<ImageIcon className="w-8 h-8" />}
+            className="h-full"
+          />
+        </div>
+      </div>
+    );
   }
 
   return (

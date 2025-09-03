@@ -1,24 +1,36 @@
 import Image from "next/image";
 import SajuCoreTable from "@/components/saju/SajuCoreTable";
-import { useGetSaju } from "@/hooks/use-get-saju";
-import { useGetProfile } from "@/hooks/use-get-profile";
 import SajuTableSkeleton from "./skeletons/SajuTableSkeleton";
+import NoData from "@/components/ui/NoData";
+import { TableIcon } from "lucide-react";
+import { SajuRes } from "@/app/api/dto/saju";
+import { ProfileRes } from "@/app/api/dto/profile";
 
-export default function SajuTable() {
-  const {
-    data: sajuData,
-    isLoading: sajuLoading,
-    isError: sajuError,
-  } = useGetSaju();
-  const {
-    data: profileData,
-    isLoading: profileLoading,
-    isError: profileError,
-  } = useGetProfile();
+interface SajuTableProps {
+  sajuData: SajuRes | undefined;
+  profileData: ProfileRes | undefined;
+  isLoading: boolean;
+}
 
-  if (!sajuData || !profileData) return null;
-  if (sajuLoading || profileLoading) return <SajuTableSkeleton />;
-  if (sajuError || profileError) return <div>에러</div>;
+export default function SajuTable({
+  sajuData,
+  profileData,
+  isLoading,
+}: SajuTableProps) {
+  if (isLoading) return <SajuTableSkeleton />;
+
+  if (!sajuData || !profileData) {
+    return (
+      <div className="px-[8px] relative">
+        <div className="flex items-center justify-center mt-[-23px] aspect-[334/500] bg-gray-100">
+          <NoData
+            message="사주 표 데이터를 불러올 수 없습니다."
+            icon={<TableIcon className="w-8 h-8" />}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="px-[8px]">

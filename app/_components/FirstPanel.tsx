@@ -2,9 +2,11 @@ import Image from "next/image";
 import MultilineText from "@/components/shared/MultilineText";
 import { DialogsRes } from "@/app/api/dto/dialogs";
 import FirstPanelSkeleton from "./skeletons/FirstPanelSkeleton";
+import NoData from "@/components/ui/NoData";
+import { ImageIcon } from "lucide-react";
 
 interface FirstPanelProps {
-  data: DialogsRes;
+  data: DialogsRes | null | undefined;
   isLoading?: boolean;
 }
 
@@ -12,8 +14,18 @@ export default function FirstPanel({
   data,
   isLoading = false,
 }: FirstPanelProps) {
-  if (isLoading) {
-    return <FirstPanelSkeleton />;
+  if (isLoading) return <FirstPanelSkeleton />;
+
+  if (!data?.firstPanel) {
+    return (
+      <div className="relative aspect-[375/652] bg-gray-100">
+        <NoData
+          message="데이터를 불러올 수 없습니다."
+          icon={<ImageIcon className="w-8 h-8" />}
+          className="h-full"
+        />
+      </div>
+    );
   }
 
   return (

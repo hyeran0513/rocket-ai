@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { DialogsRes } from "@/app/api/dto/dialogs";
 import SecondPanelSkeleton from "./skeletons/SecondPanelSkeleton";
+import NoData from "@/components/ui/NoData";
+import { ImageIcon } from "lucide-react";
 
 interface SecondPanelProps {
-  data: DialogsRes;
+  data: DialogsRes | null | undefined;
   isLoading?: boolean;
 }
 
@@ -11,8 +13,18 @@ export default function SecondPanel({
   data,
   isLoading = false,
 }: SecondPanelProps) {
-  if (isLoading) {
-    return <SecondPanelSkeleton />;
+  if (isLoading) return <SecondPanelSkeleton />;
+
+  if (!data?.secondPanel) {
+    return (
+      <div className="aspect-[351/285] bg-gray-100">
+        <NoData
+          message="데이터를 불러올 수 없습니다."
+          icon={<ImageIcon className="w-8 h-8" />}
+          className="h-full"
+        />
+      </div>
+    );
   }
 
   return (
