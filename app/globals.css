@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #424242;
+  
+  /* SajuBox 색상 */
+  --saju-red: #C23030;
+  --saju-blue: #18868C;
+  --saju-black: #2F2F2F;
+  
+  /* 오버레이 색상 */
+  --gradient-black: #000000;
+  --gradient-cream: #F3F2EF;
+  
+  /* SajuCoreCell 색상 */
+  --border-strong: #000000;
+  --border-light: #8A8A8A;
+  --border-light-alt: #9B9B9B;
+  
+  /* SajuTable 색상 */
+  --table-bg: #F5F3EC;
+  --table-border: #1B2F49;
+  --table-accent: #2B557E;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-gapyeong-hanseokbong: var(--font-gapyeong-hanseokbong);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-gapyeong-hanseokbong);
+}
