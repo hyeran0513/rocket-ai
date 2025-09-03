@@ -10,7 +10,12 @@ Rocket AI 코딩 테스트에 제출할 프로젝트 코드입니다.
 - **Package Manager**: Yarn 4.4.1
 - **Code Quality**: ESLint, Prettier
 
-## 폴더 구조
+### 배포
+**배포 URL**: https://rocket-ai-six.vercel.app/
+
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/43a5c86f-762c-4ff9-a377-14c256963ca5" />
+
+### 폴더 구조
 
 ```
 rocket-ai/
