@@ -1,12 +1,21 @@
 import Image from "next/image";
-import MultilineText from "@/components/MultilineText";
+import MultilineText from "@/components/shared/MultilineText";
 import { DialogsRes } from "@/app/api/dto/dialogs";
+import ThirdPanelSkeleton from "./skeletons/ThirdPanelSkeleton";
 
 interface ThirdPanelProps {
   data: DialogsRes;
+  isLoading?: boolean;
 }
 
-export default function ThirdPanel({ data }: ThirdPanelProps) {
+export default function ThirdPanel({
+  data,
+  isLoading = false,
+}: ThirdPanelProps) {
+  if (isLoading) {
+    return <ThirdPanelSkeleton />;
+  }
+
   return (
     <div className="relative">
       <div className="w-[239px] h-[139px] absolute top-[-104px] left-[24px] z-20">

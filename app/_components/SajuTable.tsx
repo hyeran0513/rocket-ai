@@ -1,7 +1,8 @@
 import Image from "next/image";
-import SajuCoreTable from "@/components/SajuCoreTable";
+import SajuCoreTable from "@/components/saju/SajuCoreTable";
 import { useGetSaju } from "@/hooks/use-get-saju";
 import { useGetProfile } from "@/hooks/use-get-profile";
+import SajuTableSkeleton from "./skeletons/SajuTableSkeleton";
 
 export default function SajuTable() {
   const {
@@ -16,7 +17,7 @@ export default function SajuTable() {
   } = useGetProfile();
 
   if (!sajuData || !profileData) return null;
-  if (sajuLoading || profileLoading) return <div>로딩 중</div>;
+  if (sajuLoading || profileLoading) return <SajuTableSkeleton />;
   if (sajuError || profileError) return <div>에러</div>;
 
   return (

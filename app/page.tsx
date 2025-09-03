@@ -10,19 +10,18 @@ export default function Home() {
   const { data, isLoading, isError } = useGetDialogs();
 
   if (!data) return null;
-  if (isLoading) return <div>로딩 중</div>;
   if (isError) return <div>에러</div>;
 
   return (
     <div className="max-w-md mx-auto">
       {/* 첫 번째 패널 */}
-      <FirstPanel data={data} />
+      <FirstPanel data={data} isLoading={isLoading} />
 
       {/* 두 번째 패널 */}
-      <SecondPanel data={data} />
+      <SecondPanel data={data} isLoading={isLoading} />
 
       {/* 세 번째 패널 */}
-      <ThirdPanel data={data} />
+      <ThirdPanel data={data} isLoading={isLoading} />
 
       {/* 사주 표 */}
       <SajuTable />

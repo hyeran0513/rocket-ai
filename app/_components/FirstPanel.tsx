@@ -1,12 +1,21 @@
 import Image from "next/image";
-import MultilineText from "@/components/MultilineText";
+import MultilineText from "@/components/shared/MultilineText";
 import { DialogsRes } from "@/app/api/dto/dialogs";
+import FirstPanelSkeleton from "./skeletons/FirstPanelSkeleton";
 
 interface FirstPanelProps {
   data: DialogsRes;
+  isLoading?: boolean;
 }
 
-export default function FirstPanel({ data }: FirstPanelProps) {
+export default function FirstPanel({
+  data,
+  isLoading = false,
+}: FirstPanelProps) {
+  if (isLoading) {
+    return <FirstPanelSkeleton />;
+  }
+
   return (
     <div className="relative">
       {/* 첫 번째 패널 상단 오버레이 */}

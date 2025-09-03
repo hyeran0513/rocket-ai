@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        muted: "var(--muted)",
         saju: {
           red: "var(--saju-red)",
           blue: "var(--saju-blue)",
@@ -33,10 +34,23 @@ const config: Config = {
       boxShadow: {
         saju: "0 4px 4px 0 rgba(0,0,0,0.25)",
       },
+      keyframes: {
+        shimmer: {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 2s infinite",
+      },
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(function ({ addUtilities, addComponents, theme }) {
       addUtilities({
         ".bubble-text": {
           fontWeight: "400",
@@ -61,6 +75,13 @@ const config: Config = {
           fontSize: "20px",
           lineHeight: "100%",
           letterSpacing: "0%",
+        },
+      });
+    }),
+    plugin(function ({ addUtilities, theme }) {
+      addUtilities({
+        ".animate-shimmer": {
+          animation: "shimmer 2s infinite",
         },
       });
     }),

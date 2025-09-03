@@ -1,11 +1,20 @@
 import Image from "next/image";
 import { DialogsRes } from "@/app/api/dto/dialogs";
+import SecondPanelSkeleton from "./skeletons/SecondPanelSkeleton";
 
 interface SecondPanelProps {
   data: DialogsRes;
+  isLoading?: boolean;
 }
 
-export default function SecondPanel({ data }: SecondPanelProps) {
+export default function SecondPanel({
+  data,
+  isLoading = false,
+}: SecondPanelProps) {
+  if (isLoading) {
+    return <SecondPanelSkeleton />;
+  }
+
   return (
     <div className="pt-[113px] pr-[24px] pb-[40px]">
       {/* 두 번째 패널 */}

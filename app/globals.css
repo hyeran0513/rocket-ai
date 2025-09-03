@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #424242;
+  --muted: #f1f5f9;
   
   /* SajuBox 색상 */
   --saju-red: #C23030;
